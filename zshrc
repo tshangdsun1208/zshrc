@@ -7,8 +7,7 @@ precmd() {
 }
 setopt prompt_subst
 if [[ $EUID -eq 0 ]]; then
-    PROMPT='%(?..%F{red}%? )%F{red}%n%f@%m %40<...<%B%~%b%<<${vcs_info_msg_0_} %# '
+    PROMPT='%B%F{red}%(?..%? )%f%b%B%F{red}%n%f%b@%m %B%40<..<%~%<< %b%# '
 else
-    PROMPT='%(?..%F{red}%? )%F{cyan}%n%f@%m %40<...<%B%~%b%<<${vcs_info_msg_0_} %# '
+    PROMPT='%B%F{red}%(?..%? )%f%b%B%F{blue}%n%f%b@%m %B%40<..<%~%<< %b%# '
 fi
-RPROMPT='%(?..:()'
